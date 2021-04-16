@@ -1,0 +1,47 @@
+<section id="registro">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+                    <div class="card_registro">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <form class="mt-4" [formGroup]="crearRegistro" (ngSubmit) = "registrarUsuario()">
+                                    <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
+                                    <div class="form-group">
+                                        <input type="text" id="nombre" name="nombre" class="form-control form-control-lg"
+                                        formControlName="nombre" placeholder="Nombre" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="apellidoP" name="apellidoP" class="form-control" 
+                                        formControlName="apellidoPaterno" placeholder="Apellido Paterno" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="apellidoM" name="apellidoM" class="form-control" 
+                                        formControlName="apellidoMaterno" placeholder="Apellido Materno" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="telefono" name="telefono" class="form-control" 
+                                        formControlName="telefono" placeholder="Teléfono" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" id="email" name="email" class="form-control" 
+                                        formControlName="correo" placeholder="juan@gmail.com" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" id="contrasenia" name="contrasenia" class="form-control" 
+                                        formControlName="contrasenia" placeholder="Contraseña" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-lg primary btn-block">Registrarse</button>
+                                    <div class="form-group">
+                                        <a routerLink="/login" routerLinkActive="acitve" class="form-control">¿Ya tienes una cuenta?</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

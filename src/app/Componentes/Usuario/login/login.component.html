@@ -1,0 +1,31 @@
+<section id="login">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+                    <div class="card_login">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <form class="mt-4" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                                    <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+                                    <div class="form-group">
+                                        <input type="email" id="email" name="email" class="form-control" 
+                                        formControlName="email" placeholder="juan@gmail.com" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" id="contrasenia" name="contrasenia" class="form-control" 
+                                        formControlName="password" placeholder="Contraseña" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-lg primary btn-block">Iniciar sesión</button>
+                                    <div class="form-group">
+                                        <a routerLink="/registro" routerLinkActive="acitve"  class="form-control">¿No tienes una cuenta? Registrate!</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "rentafacil-01": {
+      "hosting": {
+        "Renta-Facil": [
+          "rentafacil-01"
+        ]
+      }
+    }
+  }
+}
