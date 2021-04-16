@@ -23,8 +23,10 @@
                                     <div class="form-group">
                                         <input type="servicios" id="servicios" name="servicios" class="form-control" placeholder="Servicios" required>
                                     </div>
-                                    <!--Agregar apartado para agregar imagen-->
-                                    <button type="submit" class="btn btn-lg primary btn-block">Registrar</button>
+                                    <div class="form-group">
+                                        <input type="file" (change) ="seleccionarFotos($event)"/>
+                                    </div>
+                                    <button type="submit" class="btn btn-lg primary btn-block">Registrar Casa</button>
 
                                 </form>
                             </div>

@@ -6,35 +6,52 @@
                     <div class="card_registro">
                         <div class="card">
                             <div class="card-body text-center">
-                                <form class="mt-4" [formGroup]="crearRegistro" (ngSubmit) = "registrarUsuario()">
+                                <form class="mt-4" [formGroup]="crearRegistro" (ngSubmit)="registrarUsuario()">
+                                    <div class="imagen">
+                                        <img src="https://www.emedec.com/wp-content/uploads/2020/07/Tendencia-2021-pared-color-naval-1.jpg"
+                                            class="im">
+                                    </div>
+                                    <br>
+                                    <img src="https://www.flaticon.es/svg/vstatic/svg/4117/4117111.svg?token=exp=1618557311~hmac=2b69bbf238119bd6353acc4a8b374588"
+                                        class="logo">
+
                                     <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
                                     <div class="form-group">
-                                        <input type="text" id="nombre" name="nombre" class="form-control form-control-lg"
-                                        formControlName="nombre" placeholder="Nombre" required>
+                                        <input type="text" id="nombre" name="nombre"
+                                            class="form-control form-control-lg" formControlName="nombre"
+                                            placeholder="Nombre" >
                                     </div>
+                                    <br>
                                     <div class="form-group">
-                                        <input type="text" id="apellidoP" name="apellidoP" class="form-control" 
-                                        formControlName="apellidoPaterno" placeholder="Apellido Paterno" required>
+                                        <input type="text" id="apellidoP" name="apellidoP" class="form-control"
+                                            formControlName="apellidoPaterno" placeholder="Apellido Paterno" >
                                     </div>
+                                    <br>
                                     <div class="form-group">
-                                        <input type="text" id="apellidoM" name="apellidoM" class="form-control" 
-                                        formControlName="apellidoMaterno" placeholder="Apellido Materno" required>
+                                        <input type="text" id="apellidoM" name="apellidoM" class="form-control"
+                                            formControlName="apellidoMaterno" placeholder="Apellido Materno" >
                                     </div>
+                                    <br>
                                     <div class="form-group">
-                                        <input type="text" id="telefono" name="telefono" class="form-control" 
-                                        formControlName="telefono" placeholder="Teléfono" required>
+                                        <input type="text" id="telefono" name="telefono" class="form-control"
+                                            formControlName="telefono" placeholder="Teléfono" >
                                     </div>
+                                    <br>
                                     <div class="form-group">
-                                        <input type="email" id="email" name="email" class="form-control" 
-                                        formControlName="correo" placeholder="juan@gmail.com" required>
+                                        <input type="email" id="email" name="email" class="form-control"
+                                            formControlName="correo" placeholder="juan@gmail.com" >
                                     </div>
+                                    <br>
                                     <div class="form-group">
-                                        <input type="password" id="contrasenia" name="contrasenia" class="form-control" 
-                                        formControlName="contrasenia" placeholder="Contraseña" required>
+                                        <input type="password" id="password" name="password" class="form-control"
+                                            formControlName="password" placeholder="Contraseña" >
                                     </div>
+                                    <br>
                                     <button type="submit" class="btn btn-lg primary btn-block">Registrarse</button>
+                                    <br>
                                     <div class="form-group">
-                                        <a routerLink="/login" routerLinkActive="acitve" class="form-control">¿Ya tienes una cuenta?</a>
+                                        <a routerLink="/login" routerLinkActive="acitve" class="form-control">¿Ya tienes
+                                            una cuenta?</a>
                                     </div>
                                 </form>
                             </div>

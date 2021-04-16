@@ -23,6 +23,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistroServicioService } from './servicios/registro-servicio.service';
 import { LoginService } from './servicios/login.service';
+import { CatalogoPropietarioComponent } from './componentes/propietario/catalogo-propietario/catalogo-propietario.component';
+import { RegistrarCasaServiceService } from './Componentes/Propietario/servicios-propietario/registrar-casa-service.service';
+import * as firebase from 'firebase';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,7 @@ import { LoginService } from './servicios/login.service';
     PerfilClienteComponent,
     PerfilPropietarioComponent,
     PerfilAdministradorComponent,
+    CatalogoPropietarioComponent,
     
   ],
   imports: [
@@ -48,7 +52,7 @@ import { LoginService } from './servicios/login.service';
      HttpClientModule,
      FormsModule
   ],
-  providers: [RegistroServicioService, LoginService],
+  providers: [RegistroServicioService, LoginService, RegistrarCasaServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

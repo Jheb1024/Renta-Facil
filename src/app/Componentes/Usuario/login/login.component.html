@@ -7,18 +7,29 @@
                         <div class="card">
                             <div class="card-body text-center">
                                 <form class="mt-4" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                                    <div class="imagen">
+                                        <img src="https://unisima.com/wp-content/uploads/2014/10/conceptos-de-color-para-la-decoracion-de-interiores.jpg"
+                                            class="im">
+                                    </div>
+                                    <br>
+                                    <img src="https://scontent-qro1-1.xx.fbcdn.net/v/t1.6435-9/173917215_3978199878941157_8090787648315033980_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=730e14&_nc_eui2=AeHTJJ3lps5FBLhCbf5YW7wJNC5IPHHn_9Y0Lkg8cef_1kqaxlCICuawf1JC8k7QPYGBTcIxnXts4_yzzw72lBI9&_nc_ohc=xmFf8vakH-QAX9-qBmd&_nc_ht=scontent-qro1-1.xx&oh=9aa02d2229f685d96b29e8485930c47d&oe=609CD52F"
+                                        class="logo">
                                     <h1 class="h3 mb-3 font-weight-normal">Login</h1>
                                     <div class="form-group">
-                                        <input type="email" id="email" name="email" class="form-control" 
-                                        formControlName="email" placeholder="juan@gmail.com" required>
+                                        <input type="email" id="email" name="email" class="form-control"
+                                            formControlName="email" placeholder="juan@gmail.com" required>
                                     </div>
+                                    <br>
                                     <div class="form-group">
-                                        <input type="password" id="contrasenia" name="contrasenia" class="form-control" 
-                                        formControlName="password" placeholder="Contraseña" required>
+                                        <input type="password" id="contrasenia" name="contrasenia" class="form-control"
+                                            formControlName="password" placeholder="Contraseña" required>
                                     </div>
+                                    <br>
                                     <button type="submit" class="btn btn-lg primary btn-block">Iniciar sesión</button>
+                                    <br>
                                     <div class="form-group">
-                                        <a routerLink="/registro" routerLinkActive="acitve"  class="form-control">¿No tienes una cuenta? Registrate!</a>
+                                        <a routerLink="/registro" routerLinkActive="acitve" class="form-control">¿No
+                                            tienes una cuenta? Registrate!</a>
                                     </div>
                                 </form>
                             </div>
