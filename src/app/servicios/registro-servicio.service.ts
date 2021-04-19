@@ -15,6 +15,7 @@ export class RegistroServicioService {
   private eventAuthError = new BehaviorSubject<string>("");
   eventAuthError$ = this.eventAuthError.asObservable();
   firestore: any;
+  resetFields: any;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -30,18 +31,25 @@ export class RegistroServicioService {
       userCredential.user.updateProfile({
         displayName: user.nombre +' '+ user.apellidoPaterno
       });
+      this.db.collection('usuarios').doc(userCredential.user.uid).set(this.newUser)
+      .then(()=>{       
+        this.router.navigate(['/']);  
+      }).catch(error =>{
+        console.log(error);
+        this.eventAuthError.next(error);
+      });
 
+      //this.router.navigate(['/']);  
 
-      this.router.navigate(['/']);  
-
-      /*
+      this.resetFields();
       this.insertarDatos(userCredential)
-      .then(()=>{
-        if(userCredential){
+      .then(()=>{       
           this.router.navigate(['/']);  
-        }
-        
-      })*/
+
+      }).catch(error =>{
+        console.log(error);
+        this.eventAuthError.next(error);
+      });
 
     })
     .catch(error =>{
@@ -50,14 +58,17 @@ export class RegistroServicioService {
     
   }
   insertarDatos(userCredential: firebase.auth.UserCredential){
-    return this.db.doc('usuarios').set({
+    console.log("id de usario"+userCredential.user.uid);
+    return this.db.collection('usuarios').doc(userCredential.user.uid).set(this.newUser);
+    /*
+    return this.db.collection('usuarios').add({
       nombre: this.newUser.nombre,
-      apellidoPaterno: this.newUser.apellidoPaterno,
+      apellidoPaterno: this.newUser.apellidoP,
       apellidoMaterno: this.newUser.apellidoMaterno,
-      correo: this.newUser.email,
+      correo: this.newUser.correo,
       telefono: this.newUser.telefono,
       role: 'cliente'
-    })
+    })*/
   }
   /*
   agregarUsuario(usuario: any): Promise<any> {

@@ -6,22 +6,27 @@
                     <div class="card_registrarCasa">
                         <div class="card">
                             <div class="card-body text-center">
-                                <form action="">
+                                <form [formGroup]="crearRegistroCasa" (ngSubmit)="registrarCasaCom()">
                                     <h1 class="h3 mb-3 font-weight-normal">Registra casa</h1>
                                     <div class="form-group">
-                                        <input type="text" id="nombreCasa" name="nombreCasa" class="form-control" placeholder="Nombre casa" required>
+                                        <input type="text" id="nombreCasa" name="nombreCasa" class="form-control" placeholder="Nombre casa" required 
+                                        formControlName = "nombreCasa">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" id="noHabitantes" name="noHabitantes" class="form-control" placeholder="Número de habitantes" required>
+                                        <input type="text" id="noHabitantes" name="noHabitantes" class="form-control" placeholder="Número de habitantes" required
+                                        formControlName="noHabitantes">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" id="precio" name="precio" class="form-control" placeholder="Precio" required>
+                                        <input type="text" id="precio" name="precio" class="form-control" placeholder="Precio" required
+                                        formControlName="precio">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" id="descripcion" name="descripcion" class="form-control" placeholder="Descripción" required>
+                                        <input type="text" id="descripcion" name="descripcion" class="form-control" placeholder="Descripción" required
+                                        formControlName="descripcion">
                                     </div>
                                     <div class="form-group">
-                                        <input type="servicios" id="servicios" name="servicios" class="form-control" placeholder="Servicios" required>
+                                        <input type="servicios" id="servicios" name="servicios" class="form-control" placeholder="Servicios" required
+                                        formControlName="servicios">
                                     </div>
                                     <div class="form-group">
                                         <input type="file" (change) ="seleccionarFotos($event)"/>
