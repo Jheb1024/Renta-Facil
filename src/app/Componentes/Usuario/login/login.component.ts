@@ -4,6 +4,7 @@ import { LoginService } from  'src/app/servicios/login.service';
 import { Router } from '@angular/router';
 import {NgForm } from '@angular/forms';
 import {NgModel} from '@angular/forms';
+import { UserInterface } from 'src/app/Componentes/Usuario/models/userInterface';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

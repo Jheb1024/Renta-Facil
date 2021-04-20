@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+  }
+   
+    body {
+    background-color: #039fc2;
+  }
+   
+  
+  .galeria{
+      background-color: rgb(255, 255, 255);
+      margin-right: 20px;
+      margin-left: 20px;
+  }
+   
+  .carrusel {
+    position: relative;
+    width: 320px;
+    margin: 60px auto 0 auto;
+    perspective: 1000px;
+  }
+   
+  .carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotate360 60s infinite forwards linear;
+  }
+  .carousel__face {
+    position: absolute;
+    width: 300px;
+    height: 187px;
+    top: 20px;
+    left: 10px;
+    right: 10px;
+    background-size: cover;
+    box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.5);
+    display: flex;
+    color: white;
+  }
+   
+  span {
+    margin: auto;
+    font-size: 2rem;
+  }
+   
+   
+  .carousel__face:nth-child(1) {
+    background-image: url("https://ep01.epimg.net/economia/imagenes/2019/07/31/actualidad/1564582568_065841_1564582785_noticia_normal.jpg");
+    transform: rotateY(  0deg) translateZ(430px); }
+  .carousel__face:nth-child(2) {
+    background-image: url("https://cnnespanol.cnn.com/wp-content/uploads/2019/12/191211141622-02-3d-printed-home-mexico-full-169.jpg?quality=100&strip=info");
+      transform: rotateY( 40deg) translateZ(430px); }
+  .carousel__face:nth-child(3) {
+    background-image: url("https://images.chicmagazine.com.mx/8v2FFjPpX0WgcN6j99I1rQyBSXs=/958x596/uploads/media/2020/08/17/casa-prefabricada-la-nueva-tendencia.jpg");
+    transform: rotateY( 80deg) translateZ(430px); }
+  .carousel__face:nth-child(4) {
+    background-image: url("https://ecohabitar.org/wp-content/uploads/house-zilvar5.jpg");
+    transform: rotateY(120deg) translateZ(430px); }
+  .carousel__face:nth-child(5) {
+    background-image: url("https://www.construyehogar.com/wp-content/uploads/2016/02/Casa-de-campo-con-adobe-Fotos-Gonzalo-C%C3%A1ceres-Dancuart-Dise%C3%B1o-Marina-Vella-Arquitectos.jpg");
+    transform: rotateY(160deg) translateZ(430px); }
+  .carousel__face:nth-child(6) {
+    background-image: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/casa-de-campo-cottage-1609073579.jpg?crop=1.00xw:0.669xh;0,0.287xh&resize=640:*");
+   transform: rotateY(200deg) translateZ(430px); }
+  .carousel__face:nth-child(7) {
+    background-image: url("https://www.arquitecturaydiseno.es/medio/2020/10/19/casa-prefabricada-de-hormipresa-en-el-boecillo-valladolid-realizada-con-el-sistema-arctic-wall-de-paneles-estructurales-con-el-acabado-incorporado_6f2a28cd_1280x794.jpg");
+   transform: rotateY(240deg) translateZ(430px); }
+  .carousel__face:nth-child(8) {
+    background-image: url("https://images.adsttc.com/media/images/5bc6/2af3/f197/cc33/b700/0034/newsletter/Tinel_final-16.jpg?1539713731");
+    transform: rotateY(280deg) translateZ(430px); }
+  .carousel__face:nth-child(9) {
+    background-image: url("https://assets.website-files.com/5f4f67c5950db17954dd4f52/5f5b7ee442f1e5b9fee1c117_hacerse-una-casa.jpeg");
+    transform: rotateY(320deg) translateZ(430px); }
+   
+  @keyframes rotate360 {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(-360deg);
+    }
+  }SSS
+   
+  .card-img{
+    width: 190px;
+    height: 150px;
+  }
+   
+  
+  .card {
+    box-shadow: 0 4px 8px 0 grey;
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }

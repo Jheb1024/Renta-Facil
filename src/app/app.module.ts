@@ -26,6 +26,7 @@ import { LoginService } from './servicios/login.service';
 import { CatalogoPropietarioComponent } from './componentes/propietario/catalogo-propietario/catalogo-propietario.component';
 import { RegistrarCasaServiceService } from './Componentes/Propietario/servicios-propietario/registrar-casa-service.service';
 import * as firebase from 'firebase';
+import { ImagenesCasaService } from './componentes/Cliente/servicios/imagenes-casa.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import * as firebase from 'firebase';
      HttpClientModule,
      FormsModule
   ],
-  providers: [RegistroServicioService, LoginService, RegistrarCasaServiceService],
+  providers: [RegistroServicioService, LoginService, RegistrarCasaServiceService, ImagenesCasaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

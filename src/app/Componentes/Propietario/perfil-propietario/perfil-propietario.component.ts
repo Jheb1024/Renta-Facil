@@ -16,7 +16,7 @@ export class PerfilPropietarioComponent implements OnInit {
   constructor(private Authsvc:LoginService) {
     
   } 
-  async ngOnInit(){
+   ngOnInit(){
   }
 
 }

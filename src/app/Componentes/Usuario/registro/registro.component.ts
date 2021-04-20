@@ -49,7 +49,11 @@ registrarUsuario(){
       apellidoM: this.crearRegistro.value.apellidoMaterno,
       telefono: this.crearRegistro.value.telefono,
       correo: this.crearRegistro.value.correo,
-      password: this.crearRegistro.value.password
+      password: this.crearRegistro.value.password,
+      //URLcasa:"",
+      roles: {
+        Cliente: true
+      }
     }
     //console.log(usuario);
 
