@@ -7,32 +7,39 @@
                         <div class="card">
                             <div class="card-body text-center">
                                 <form [formGroup]="crearRegistroCasa" (ngSubmit)="registrarCasaCom()">
+                                  <div class="imagen">
+                                      <img src="https://image.freepik.com/free-photo/beautiful-interior-shot-modern-house-with-white-relaxing-walls-furniture-technology_181624-3828.jpg"
+                                          class="im">
+ 
+                                  </div><br><br><br>
+                                  <img src="https://www.flaticon.com/svg/vstatic/svg/4221/4221696.svg?token=exp=1618972042~hmac=5f84e0e3d7b6e8bc2fd2dcaa4faac3a4"
+                                      class="logo">
                                     <h1 class="h3 mb-3 font-weight-normal">Registra casa</h1>
                                     <div class="form-group">
-                                        <input type="text" id="nombreCasa" name="nombreCasa" class="form-control" placeholder="Nombre casa" required 
+                                        <input type="text" id="nombreCasa" name="nombreCasa" class="form-control" placeholder="Nombre casa" required
                                         formControlName = "nombreCasa">
-                                    </div>
+                                    </div><br>
                                     <div class="form-group">
                                         <input type="text" id="noHabitantes" name="noHabitantes" class="form-control" placeholder="Número de habitantes" required
                                         formControlName="noHabitantes">
-                                    </div>
+                                    </div><br>
                                     <div class="form-group">
                                         <input type="text" id="precio" name="precio" class="form-control" placeholder="Precio" required
                                         formControlName="precio">
-                                    </div>
+                                    </div><br>
                                     <div class="form-group">
                                         <input type="text" id="descripcion" name="descripcion" class="form-control" placeholder="Descripción" required
                                         formControlName="descripcion">
-                                    </div>
+                                    </div><br>
                                     <div class="form-group">
                                         <input type="servicios" id="servicios" name="servicios" class="form-control" placeholder="Servicios" required
                                         formControlName="servicios">
-                                    </div>
+                                    </div><br>
                                     <div class="form-group">
                                         <input type="file" (change) ="seleccionarFotos($event)"/>
-                                    </div>
-                                    <button type="submit" class="btn btn-lg primary btn-block">Registrar Casa</button>
-
+                                    </div><br>
+                                    <button type="submit" class="btn btn-lg primary btn-block">Registrar Casa</button><br>
+ 
                                 </form>
                             </div>
                         </div>
