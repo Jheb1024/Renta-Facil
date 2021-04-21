@@ -7,8 +7,13 @@
   }
    
   
+  html body {
+    background-color: #0191B0;
+  }
+   
+  
   .galeria{
-      background-color: rgb(255, 255, 255);
+      background-color: white;
       margin-right: 20px;
       margin-left: 20px;
   }
@@ -94,4 +99,13 @@
     padding: 16px;
     text-align: center;
     background-color: #f1f1f1;
+  }
+   
+  .card-columns{
+    @include media-breakpoint-only(lg) {
+      column-count: 4;
+    }
+    @include media-breakpoint-only(xl) {
+      column-count: 5;
+    }
   }
