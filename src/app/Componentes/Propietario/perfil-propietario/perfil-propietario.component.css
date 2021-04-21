@@ -59,3 +59,58 @@
   .form-control:hover {
     color: #0191B4;
   }
+
+  /*/////////////////////////////////////////////////////*/
+
+  body {
+    margin: 0;
+  }
+   
+  ul {
+    margin: 0;
+    padding: 0;
+    width: 18%;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    background-color: red;
+  }
+   
+  li a {
+    display: block;
+    color: #000;
+    padding: 8px 10px;
+    text-decoration: none;
+  }
+   
+  li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+   
+  .catalogo:before {
+    content: url("https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/newspaper.png");
+    display: inline;
+    margin-right: 5px;
+    vertical-align: middle;
+    width: 32px;
+    height: 32px;
+  }
+   
+  .regitrar:before {
+    content: url("https://image.flaticon.com/icons/png/128/3248/3248125.png");
+    display: inline;
+    margin-right: 5px;
+    vertical-align: middle;
+    width: 32px;
+    height: 32px;
+  }
+   
+  .salir:before {
+    content: url("https://cdn.icon-icons.com/icons2/1380/PNG/128/emblemunreadable_93487.png");
+    display: inline;
+    margin-right: 5px;
+    vertical-align: middle;
+    width: 32px;
+    height: 32px;
+  }
