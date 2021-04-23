@@ -1,1 +1,44 @@
-<p>catalogo-propietario works!</p>
+<head>
+
+      <title>Bootstrap Card</title>
+     
+    <meta charset="utf-8">
+     
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+    <link rel="stylesheet" href="catalogo-propietario.component.css">
+     
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  </head> 
+  
+  <body>   
+      <h1 class="text-center">Mis Casas</h1>
+    <div class="galeria">
+      <div class="card-deck">
+  
+        <div *ngFor="let item of arrayCasas1">
+          <div class="card-body text-center">
+              <div class="card" style="width: 18rem;">
+                <div *ngFor="arrayCasas1?.lenght > 0; else noCasas2" class="card-header">List of Files</div> <!---->
+                <h4 class="card-title">{{item.nombreCasa}}</h4>
+                  <img src={{item.URLcasa}} class="card-img" width="190px" height="150px">
+                  <div class="card-body">
+                    <h5 class="card-title">Precio: {{item.precio}}</h5>
+                    <p class="card-text">No. Habitantes:  {{item.nHabitantes}}</p> <!--Falta la direccion-->
+                    <p class="card-text">Servicios:  {{item.servicios}}</p>
+                    <p class="card-text">Estado de validación:  {{item.estado}}</p>
+                    <button class="btn btn-lg primary btn-block" (click)="darBaja(item.idCasa)">Dar de baja</button>
+                  </div>
+                </div>
+              </div>
+            </div>            
+      </div>
+    </div>
+  </body>

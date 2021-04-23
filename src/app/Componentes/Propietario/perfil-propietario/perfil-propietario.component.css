@@ -1,61 +1,114 @@
 .card-body{
-    position: sticky;
-    text-align: center;
-  }
-   
-  .h3{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-    color: black;
-  }
-   
-  .logo{
-      margin: 0em;
-      padding: 0em;
-      width: 170px;
-      height: 150px;
-  }
-   
-  
-  .im{
-    float: left;
+  position: sticky;
+  text-align: center;
+}
+ 
+.h3{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  color: black;
+}
+ 
+.logo{
     margin: 0em;
-    width: 760px;
-    height: 638px;
-  }
-   
-  input {
-    font-size: 20px;
-    outline: 0;
-    border-width: 0 0 2px;
-    border-color: back;
-    background-color: #f7f7f7;
-  }
-   
-  input:focus {
-    border-color: #35BBCA;
-  }
-   
-  .btn{
-      color: black;
-      font-weight: lighter;
-      cursor: pointer;
-      padding: 5px;
-      margin: 0 10px 20px 0;
-      border: 1px solid #F8D90F;
-      background: #F8D90F;
-      border-radius: 8px 8px 8px 8px;
-  }
-   
-  .btn:hover {
-      background: #D3DD18;
-      border: 1px solid #D3DD18;
-  }
-   
-  .form-control{
+    padding: 0em;
+    width: 170px;
+    height: 150px;
+}
+ 
+
+.im{
+  float: left;
+  margin: 0em;
+  width: 760px;
+  height: 638px;
+}
+ 
+input {
+  font-size: 20px;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: back;
+  background-color: #f7f7f7;
+}
+ 
+input:focus {
+  border-color: #35BBCA;
+}
+ 
+.btn{
     color: black;
-  }
-   
-  .form-control:hover {
-    color: #0191B4;
-  }
+    font-weight: lighter;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 10px 20px 0;
+    border: 1px solid #F8D90F;
+    background: #F8D90F;
+    border-radius: 8px 8px 8px 8px;
+}
+ 
+.btn:hover {
+    background: #D3DD18;
+    border: 1px solid #D3DD18;
+}
+ 
+.form-control{
+  color: black;
+}
+ 
+.form-control:hover {
+  color: #0191B4;
+}
+
+body {
+  margin: 0;
+}
+ 
+ul {
+  margin: 0;
+  padding: 0;
+  width: 14%;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(255, 166, 0);
+}
+ 
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 10px;
+  text-decoration: none;
+}
+ 
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+ 
+.catalogo:before {
+  /*content: url("https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/newspaper.png");*/
+  display: inline;
+  margin-right: 5px;
+  vertical-align: middle;
+  width: 32px;
+  height: 32px;
+}
+ 
+.regitrar:before {
+  /*content: url("https://image.flaticon.com/icons/png/128/3248/3248125.png");*/
+  display: inline;
+  margin-right: 5px;
+  vertical-align: middle;
+  width: 32px;
+  height: 32px;
+}
+ 
+.salir:before {
+  /*content: url("https://cdn.icon-icons.com/icons2/1380/PNG/128/emblemunreadable_93487.png");*/
+  display: inline;
+  margin-right: 5px;
+  vertical-align: middle;
+  width: 32px;
+  height: 32px;
+}

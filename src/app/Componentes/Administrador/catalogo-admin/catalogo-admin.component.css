@@ -109,5 +109,19 @@
       column-count: 5;
     }
   }
-
+  .btn{
+    color: black;
+    font-weight: lighter;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 10px 20px 0;
+    border: 1px solid #F8D90F;
+    background: #F8D90F;
+    border-radius: 8px 8px 8px 8px;
+}
+ 
+.btn:hover {
+    background: #D3DD18;
+    border: 1px solid #D3DD18;
+}
   

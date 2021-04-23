@@ -19,21 +19,11 @@ export class PerfilClienteComponent implements OnInit {
   constructor(private imageService: ImagenesCasaService) { }
 
   ngOnInit(): void {
-    this.imageService.getImages().subscribe(items=>{
+    this.imageService.getImages().subscribe(items=>{ //Aqui debe existir un for para poder mostrar solo las casas activas
       console.log(items);
       this.casas1 = items;
 
     });
-    /*this.imageService.getImages(1).snapshotChanges().pipe(
-      map(changes =>
-        
-        changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
-      )
-      
-    ).subscribe(fileUploads => {
-      this.fileUploads = fileUploads;
-      console.log("Recuperamos las fotos"+ this.fileUploads);
-    });*/
   }
 
 }

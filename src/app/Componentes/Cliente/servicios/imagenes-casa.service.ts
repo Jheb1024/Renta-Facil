@@ -23,11 +23,11 @@ export class ImagenesCasaService {
     private router: Router,
   ) {
 
-    this.images = this.db.collection('propiedades').valueChanges();
+   
   }
 
   getImages() {
-    return this.images;
+    return  this.images = this.db.collection('propiedades').valueChanges();
     
   }
 }

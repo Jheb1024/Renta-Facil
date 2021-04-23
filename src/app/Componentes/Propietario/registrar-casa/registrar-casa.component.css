@@ -1,0 +1,61 @@
+.card-body{
+    position: sticky;
+    text-align: center;
+  }
+ 
+  .h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    color: black;
+  }
+ 
+  .logo{
+      margin: 0em;
+      padding: 0em;
+      width: 170px;
+      height: 150px;
+  }
+ 
+
+  .im{
+    float: left;
+    margin: 0em;
+    width: 760px;
+    height: 638px;
+  }
+ 
+  input {
+    font-size: 20px;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: back;
+    background-color: #f7f7f7;
+  }
+ 
+  input:focus {
+    border-color: #35BBCA;
+  }
+ 
+  .btn{
+      color: black;
+      font-weight: lighter;
+      cursor: pointer;
+      padding: 5px;
+      margin: 0 10px 20px 0;
+      border: 1px solid #F8D90F;
+      background: #F8D90F;
+      border-radius: 8px 8px 8px 8px;
+  }
+ 
+  .btn:hover {
+      background: #D3DD18;
+      border: 1px solid #D3DD18;
+  }
+ 
+  .form-control{
+    color: black;
+  }
+ 
+  .form-control:hover {
+    color: #0191B4;
+  }

@@ -27,6 +27,7 @@ import { CatalogoPropietarioComponent } from './componentes/propietario/catalogo
 import { RegistrarCasaServiceService } from './Componentes/Propietario/servicios-propietario/registrar-casa-service.service';
 import * as firebase from 'firebase';
 import { ImagenesCasaService } from './componentes/Cliente/servicios/imagenes-casa.service';
+import { CatalogoAdminComponent } from './Componentes/Administrador/catalogo-admin/catalogo-admin.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ImagenesCasaService } from './componentes/Cliente/servicios/imagenes-ca
     PerfilPropietarioComponent,
     PerfilAdministradorComponent,
     CatalogoPropietarioComponent,
+    CatalogoAdminComponent,
     
   ],
   imports: [

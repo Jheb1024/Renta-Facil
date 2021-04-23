@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CatalogoAdminComponent } from './Componentes/Administrador/catalogo-admin/catalogo-admin.component';
 import { PerfilAdministradorComponent } from './componentes/Administrador/perfil-administrador/perfil-administrador.component';
 import { PerfilClienteComponent } from './componentes/Cliente/perfil-cliente/perfil-cliente.component';
 import { HomeComponent } from './componentes/Home/home/home.component';
@@ -8,6 +9,7 @@ import { PerfilPropietarioComponent } from './componentes/Propietario/perfil-pro
 import { RegistrarCasaComponent } from './componentes/Propietario/registrar-casa/registrar-casa.component';
 import { LoginComponent } from './componentes/usuario/login/login.component';
 import { RegistroComponent } from './Componentes/Usuario/registro/registro.component';
+
 
 
 const routes: Routes = [
@@ -23,7 +25,8 @@ const routes: Routes = [
   //Componentes del cliente
   {path: 'PerfilCliente',component:PerfilClienteComponent},
   //Componentes del administrador
-  {path: 'PerfilAdministrador',component: PerfilAdministradorComponent}
+  {path: 'PerfilAdministrador',component: PerfilAdministradorComponent},
+  {path: 'CatalogoAdministrador', component:CatalogoAdminComponent }
 ];
 
 @NgModule({
