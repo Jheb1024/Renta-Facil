@@ -19,10 +19,9 @@ export class PerfilClienteComponent implements OnInit {
   constructor(private imageService: ImagenesCasaService) { }
 
   ngOnInit(): void {
-    this.imageService.getImages().subscribe(items=>{ //Aqui debe existir un for para poder mostrar solo las casas activas
+   this.imageService.getImages().subscribe(items=>{ //Aqui debe existir un for para poder mostrar solo las casas activas
       console.log(items);
       this.casas1 = items;
-
     });
   }
 

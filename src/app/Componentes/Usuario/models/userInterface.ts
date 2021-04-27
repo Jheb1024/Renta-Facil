@@ -1,8 +1,4 @@
-export interface Roles {
-    Administrador?:boolean;
-    Propietario?:boolean;
-    Cliente?:boolean;
-}
+export type roles = 'Cliente'|'Propietario'|'Administrador';
 
 export interface UserInterface {
     apllidoM?:string;
@@ -12,5 +8,5 @@ export interface UserInterface {
     password?:string;
     telefono?:string;
     URLpropiedad?:string;
-    roles:Roles;
+    role?:roles;
 }

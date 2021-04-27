@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule, routingComponents} from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +29,10 @@ import { RegistrarCasaServiceService } from './Componentes/Propietario/servicios
 import * as firebase from 'firebase';
 import { ImagenesCasaService } from './componentes/Cliente/servicios/imagenes-casa.service';
 import { CatalogoAdminComponent } from './Componentes/Administrador/catalogo-admin/catalogo-admin.component';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
+import { CanEditGuard } from './Componentes/Usuario/can-edit.guard';
+import { CanPropietarioGuard } from './Componentes/Usuario/can-propietario.guard';
+
 
 @NgModule({
   declarations: [
@@ -41,10 +46,13 @@ import { CatalogoAdminComponent } from './Componentes/Administrador/catalogo-adm
     PerfilAdministradorComponent,
     CatalogoPropietarioComponent,
     CatalogoAdminComponent,
+    NavbarComponent,
+   
     
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
      // 3. Initialize
      AngularFireModule.initializeApp(environment.firebase),
@@ -53,9 +61,10 @@ import { CatalogoAdminComponent } from './Componentes/Administrador/catalogo-adm
      AngularFireStorageModule, // storage
      ReactiveFormsModule, // modulo imprtado forms
      HttpClientModule,
-     FormsModule
+     FormsModule,
+     
   ],
-  providers: [RegistroServicioService, LoginService, RegistrarCasaServiceService, ImagenesCasaService],
+  providers: [RegistroServicioService, LoginService, RegistrarCasaServiceService, ImagenesCasaService, CanEditGuard, CanPropietarioGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

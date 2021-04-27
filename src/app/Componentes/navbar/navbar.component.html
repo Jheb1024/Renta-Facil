@@ -1,0 +1,21 @@
+<div class="navegador">
+   
+    <ul *ngIf="user$ | async as user; else login">
+        <li><a routerLink="/">Inicio</a></li>
+        
+        <li *ngIf="isAdministrador "><a routerLink="/PerfilAdministrador">Perfil</a></li>
+        <li *ngIf="isAdministrador "><a routerLink="/CatalogoAdministrador">Adminsitrar Catalogo</a></li>
+
+        <li *ngIf="isPropietario  "><a routerLink="/PerfilPropietario">Perfil</a></li>
+        <li *ngIf="isPropietario  "><a routerLink="/registrarCasa">Registrar Casa</a></li>
+        <li *ngIf="isPropietario  "><a routerLink="/catalogoPropietario">Mis propiedades</a></li>
+
+        <li *ngIf="isCliente  "><a routerLink="/PerfilCliente">Perfil</a></li>
+
+        <li *ngIf="user" ><a routerLink="/" (click)="logout()" >Cerrar sesion</a></li>
+    </ul>
+    <ng-template #login>
+        <li><a routerLink="/login" >Iniciar sesion</a></li>
+        <li><a routerLink="/registro" >Registro</a></li>
+    </ng-template>
+  </div><br>

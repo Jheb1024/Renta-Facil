@@ -16,17 +16,26 @@ export class LoginComponent implements OnInit {
     email: new FormControl(''),
     password: new FormControl(''),
   })
+  isLogued:boolean;
    //Variable para validar el formulario
-  submited: false;
+  submited:boolean;
   //
-  constructor(private auth: LoginService) 
+  constructor(private auth: LoginService, private router:Router) 
     {
-
+      this.isLogued = false;
     }
     onLogin( ){
       const {email, password} = this.loginForm.value;
-      this.auth.login(email, password);
+      this.auth.login(email, password).then((user)=>{
+        console.log(user.uid);
+        this.auth.getDataUser();
+        this.router.navigate(['/']);
+       
+      })
+      
+      
     }
+    
   
   ngOnInit(): void {
     //this.registrarUsuario();
