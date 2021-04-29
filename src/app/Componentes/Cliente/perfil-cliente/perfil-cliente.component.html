@@ -48,7 +48,7 @@
                     <p class="card-text"><b>Servicios:</b>  {{item.servicios}}</p>
                     <p class="card-text"><b>Descripción:</b>  {{item.descripcion}}</p>
                     <!--<p class="card-text">Dirección:  {{item.direccionCasa}}</p>-->
-                  <a routerLink="/reservar" class="btn btn-primary">Reservar</a>
+                  <button class="btn btn-primary" (click)="openDialog()">Reservar</button>
                 </div>
               </div>
             </div>

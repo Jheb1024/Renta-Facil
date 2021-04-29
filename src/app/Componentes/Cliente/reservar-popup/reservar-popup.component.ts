@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-reservar-popup',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservarPopupComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialogRef: MatDialogRef<ReservarPopupComponent>) { }
 
   ngOnInit(): void {
   }
+  close() {
+    this.dialogRef.close();
+}
 
 }

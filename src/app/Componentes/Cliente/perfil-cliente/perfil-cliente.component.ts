@@ -5,6 +5,8 @@ import { ImagenesCasaService } from '../servicios/imagenes-casa.service';
 import firebase from 'firebase';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { map } from 'rxjs/operators';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
+import { ReservarPopupComponent } from '../reservar-popup/reservar-popup.component';
 
 @Component({
   selector: 'app-perfil-cliente',
@@ -16,7 +18,9 @@ export class PerfilClienteComponent implements OnInit {
   casas1:casas[];
   fileUploads?: any[];
 
-  constructor(private imageService: ImagenesCasaService) { }
+  constructor(private imageService: ImagenesCasaService,
+    private dialog:MatDialog,
+    ) { }
 
   ngOnInit(): void {
    this.imageService.getImages().subscribe(items=>{ //Aqui debe existir un for para poder mostrar solo las casas activas
@@ -25,4 +29,13 @@ export class PerfilClienteComponent implements OnInit {
     });
   }
 
+  openDialog(){
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(ReservarPopupComponent, dialogConfig);
+
+  }
 }

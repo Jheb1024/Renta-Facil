@@ -4,6 +4,8 @@ import firebase from 'firebase';
 import { Observable } from 'rxjs';
 import { reservacion } from '../Interfaces/reservacion_model';
 import { ReservacionesServiceService } from '../servicios/reservaciones-service.service';
+import { MatDialog, MatDialogConfig, } from '@angular/material/dialog';
+import { ReservarPopupComponent } from '../reservar-popup/reservar-popup.component';
 
 @Component({
   selector: 'app-mis-reservaciones',
@@ -16,10 +18,14 @@ export class MisReservacionesComponent implements OnInit {
   listReservaciones=[];
   idUsuario: string;
 
-  constructor( private reservacionesSvc:ReservacionesServiceService) {
-   this.idUsuario = firebase.auth().currentUser.uid;
-   this.listaReservaciones();
+  constructor( private reservacionesSvc:ReservacionesServiceService,
+    private dialog:MatDialog) {//injectamos el servicio de las reservaciones
+   this.idUsuario = firebase.auth().currentUser.uid;//extraemos el uid del cliente logueado
+   this.listaReservaciones();//llamamos a la función desde que se construye.
   }
+
+//desplegamos una lista de las reservaciones del cliente logueado
+  ngOnInit(): void {}
 
   listaReservaciones(){
     this.reservaciones$.subscribe(items =>{
@@ -37,7 +43,6 @@ export class MisReservacionesComponent implements OnInit {
 
 
 
-  ngOnInit(): void {
-  }
+  
 
 }

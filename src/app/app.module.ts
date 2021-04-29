@@ -80,6 +80,7 @@ import { ReservarPopupComponent } from './componentes/cliente/reservar-popup/res
      MatButtonModule,
      
   ],
+  entryComponents:[ReservarPopupComponent],
   providers: [RegistroServicioService, LoginService, RegistrarCasaServiceService, ImagenesCasaService, CanEditGuard, CanPropietarioGuard,CaClienteGuard,ReservacionesServiceService],
   bootstrap: [AppComponent]
 })

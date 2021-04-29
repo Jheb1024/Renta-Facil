@@ -3,43 +3,26 @@
     <div class="modal">
         <div class="modal__container">
           <div class="modal__featured">
-            <button type="button" class="button--transparent button--close">
+            <button (click)="close()" type="button" class="button--transparent button--close">
               <svg class="nc-icon glyph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32">
                 <g><path fill="#ffffff" d="M1.293,15.293L11,5.586L12.414,7l-8,8H31v2H4.414l8,8L11,26.414l-9.707-9.707 C0.902,16.316,0.902,15.684,1.293,15.293z"></path> </g></svg>
-              <span class="visuallyhidden">Return to Product Page</span>
+              <span  class="visuallyhidden">Return to Product Page</span>
             </button>
             <div class="modal__circle"></div>
             <img src="https://www.flaticon.com/svg/vstatic/svg/4172/4172444.svg?token=exp=1619493063~hmac=af5c4067555f24f26723f7740aa0611d" class="modal__product" />
           </div>
           <div class="modal__content">
             <h2>Detalles de la reservacion</h2>
-
             <form>
               <ul class="form-list">
                 <li class="form-lists">
-
                   <label>Fecha de entrada:</label>
-
-                  <input type="date" id="start" name="trip-start"
-
-                        value="2018-07-22"
-
-                        min="2018-01-01" max="2030-12-31">
-
+                  <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2030-12-31">
                 </li><br>
-
                 <li class="form-lists">
-
                   <label>Fecha de salida:</label>
-
-                  <input type="date" id="start" name="trip-start"
-
-                        value="2018-07-22"
-
-                        min="2018-01-01" max="2030-12-31">
-
+                  <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2030-12-31">
                 </li><br>
-
                 <li class="form-list__row">
                   <label>Nombre</label>
                   <input type="text" name="" required="" />
