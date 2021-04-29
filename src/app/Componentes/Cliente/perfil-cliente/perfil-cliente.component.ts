@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { casas } from '../casa_model';
+import { casas } from '../Interfaces/casa_model';
 import { ImagenesCasaService } from '../servicios/imagenes-casa.service';
 import firebase from 'firebase';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';

@@ -6,8 +6,6 @@ export class rolValidator{
     }
 
     isPropietario(user:UserInterface){
-        localStorage.setItem('role',user.role);
-        console.log("ROLEEEEEEE en local"+user.role);
         return user.role === 'Propietario';
     }
 

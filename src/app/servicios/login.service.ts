@@ -35,6 +35,7 @@ export class LoginService extends rolValidator{
     
     ){
       super();
+      //Inicializamos el observable que contenndrá el objeto del usuario logueado
       this.usuario$ = this.afAuth.authState.pipe(
        switchMap((user)=>{
          if(user){
@@ -44,34 +45,36 @@ export class LoginService extends rolValidator{
        })
       )
     }
-
-    
-    
-    async login(email:string, password: string){
-      try{
-          const {user} = await this.afAuth.signInWithEmailAndPassword(email,password)
-          //this.Recargar = true;
-          return user;
-          }catch(error){
-            console.log("Error en el login: "+error);
-            
-          }
+    //El metodo login es asincrono para poder realizar esaa accion
+    //cuando dicha acción se cumpla nos redirija al home
+  async login(email:string, password: string){
+    try{
+        const {user} = await this.afAuth.signInWithEmailAndPassword(email,password)
+        //this.Recargar = true;
+        return user;
+        }catch(error){
+          console.log("Error en el login: "+error);
+          
+        }
   }
+  //Recolectamos la lista de usuarios
   recuperarColletionUsuarios(){
     return this.db.collection('usuarios');
   }
-   onLogout(){
 
-    this.afAuth.currentUser = null;
-    this.afAuth.onAuthStateChanged(null);
-    localStorage.removeItem("role");
-    this.afAuth.signOut();
-    this.ngZone.run(()=>this.router.navigate(['/']));
+   onLogout(){
+    
+    localStorage.removeItem("role");//Eliminamos el role del localstorage
+    this.afAuth.signOut();//cerrramos sesión de forma apropiada
+    this.ngZone.run(()=>this.router.navigate(['/'])); ///no redirige al home
   }
-  getCurrentUser(){
+
+  getCurrentUser(){//retornamos el usuario actual
     return this.afAuth.authState.pipe(first()).toPromise();
   }
 
+//Obtenemos el objeto desde la base de datos por medio del ID y luego obtenemos el rol
+//guardamos el rol en el local storage
   getDataUser(){
     this.afAuth.currentUser.then(user =>{
        this.superuser = this.db.collection("usuarios").doc(user.uid).valueChanges()
@@ -80,8 +83,6 @@ export class LoginService extends rolValidator{
          localStorage.setItem('role', user2.role);
        })
     })
-   
-
   }
   
 }

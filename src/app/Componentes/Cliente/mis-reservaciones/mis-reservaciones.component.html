@@ -1,0 +1,27 @@
+<div>
+    <h1>Mis reservaciones</h1>
+</div>
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Nombre Casa</th>
+                <th scope="col">Fecha Entrada</th>
+                <th scope="col">Fecha Salida</th>
+                <th class="d-none d-sm-block" scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-info" *ngFor="let item of listReservaciones">
+                <th scope="row">{{item.idPropiedad}}</th>
+                <td>{{item.fechaInicio.toDate() | date:"MM/dd/yyyy"}}</td>
+                <td>{{item.fechaFinal.toDate() | date:"MM/dd/yyyy"}}</td>
+                <td class="btn-group d-none d-sm-block " role="group">
+                    <button type="button" class="btn btn-outline-warnings m-1" >Extender</button>
+                    <button type="button" class="btn btn-outline-warnings m-1" >Cancelar</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

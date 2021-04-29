@@ -28,17 +28,13 @@ export class LoginComponent implements OnInit {
       const {email, password} = this.loginForm.value;
       this.auth.login(email, password).then((user)=>{
         console.log(user.uid);
-        this.auth.getDataUser();
-        this.router.navigate(['/']);
-       
+        this.auth.getDataUser();//Llamamos esta funcion del servicio para poder alamacenar el rol en el localstorage
+        this.router.navigate(['/']);//nos redirigimos al home
       })
-      
-      
     }
     
   
   ngOnInit(): void {
-    //this.registrarUsuario();
   }
-//Metodo para crear nuevos usuarios e insertarlos en la base de datos
+
 }

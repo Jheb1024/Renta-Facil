@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import firebase from 'firebase';
 import { Observable } from 'rxjs';
-import { casas } from '../casa_model';
+import { casas } from '../Interfaces/casa_model';
 
 
 @Injectable({

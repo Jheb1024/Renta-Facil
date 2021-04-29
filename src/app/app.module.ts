@@ -32,6 +32,16 @@ import { CatalogoAdminComponent } from './Componentes/Administrador/catalogo-adm
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { CanEditGuard } from './Componentes/Usuario/can-edit.guard';
 import { CanPropietarioGuard } from './Componentes/Usuario/can-propietario.guard';
+import { CaClienteGuard } from './Componentes/Usuario/ca-cliente.guard';
+import { MisReservacionesComponent } from './componentes/Cliente/mis-reservaciones/mis-reservaciones.component';
+import { ReservacionesServiceService } from './Componentes/Cliente/servicios/reservaciones-service.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { ReservarPopupComponent } from './componentes/cliente/reservar-popup/reservar-popup.component';
+
+ 
 
 
 @NgModule({
@@ -47,6 +57,8 @@ import { CanPropietarioGuard } from './Componentes/Usuario/can-propietario.guard
     CatalogoPropietarioComponent,
     CatalogoAdminComponent,
     NavbarComponent,
+    MisReservacionesComponent,
+    ReservarPopupComponent,
    
     
   ],
@@ -62,9 +74,13 @@ import { CanPropietarioGuard } from './Componentes/Usuario/can-propietario.guard
      ReactiveFormsModule, // modulo imprtado forms
      HttpClientModule,
      FormsModule,
+     BrowserAnimationsModule,
+     MatSliderModule,
+     MatDialogModule,
+     MatButtonModule,
      
   ],
-  providers: [RegistroServicioService, LoginService, RegistrarCasaServiceService, ImagenesCasaService, CanEditGuard, CanPropietarioGuard],
+  providers: [RegistroServicioService, LoginService, RegistrarCasaServiceService, ImagenesCasaService, CanEditGuard, CanPropietarioGuard,CaClienteGuard,ReservacionesServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

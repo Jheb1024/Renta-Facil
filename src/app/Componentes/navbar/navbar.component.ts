@@ -15,7 +15,7 @@ import { UserInterface } from '../Usuario/models/userInterface';
 })
 export class NavbarComponent implements OnInit {
   public isUserLogued:boolean
-  public user$: Observable<any> = this.login.afAuth.user;
+  public user$: Observable<any> = this.login.afAuth.user; //Este observable nos idica si el usuario está en sesion
   public usuario$:Observable<UserInterface>;
   public prepietario:string;
   public isAdministrador:boolean;
@@ -27,22 +27,17 @@ export class NavbarComponent implements OnInit {
     private router:Router, 
     private db:AngularFirestore, 
     private auf:AngularFireAuth,
-    ) {
-    this.isUserLogued = false; 
-    //location.reload();
-    
-    
-    
-    
-   }
+    ){}
   
   ngOnInit() { 
-    //location.reload();console.log("rolee recuperado"+localStorage.getItem('role'));
+  //Vemos de que tipo es el rol de usuario almacenado en el localsotarage
+  //volvemos true a la variable booleana
     this.rol = localStorage.getItem('role');
     if(this.rol === 'Administrador'){
       console.log("Es el administrador el que entro..");
       this.isAdministrador = true;
       console.log(this.isAdministrador);
+     
     }else{
       if(this.rol === 'Propietario'){
         console.log("Es el propiettario el que entro..");
@@ -50,26 +45,24 @@ export class NavbarComponent implements OnInit {
         console.log(this.isPropietario);
       }else{
         if(this.rol === 'Cliente'){
-          console.log("Es el propiettario el que entro..");
+          console.log("Es el cliente el que entro..");
           this.isCliente = true;
           console.log(this.isCliente);
+         
+        }else{
+          this.isAdministrador = false;
+          this.isPropietario = false;
+          this.isCliente = false;
         }
       }
     }
-  
   }
-  recargarPagina(){
-   
-  }
-   logout(){
 
+   logout(){
     try{
-       this.login.onLogout();
-       //location.reload();
-      
+       this.login.onLogout(); 
     }catch(error){
       console.log(error);
-      
     }
   }
 }
