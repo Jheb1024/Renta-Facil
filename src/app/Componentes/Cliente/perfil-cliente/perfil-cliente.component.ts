@@ -7,6 +7,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { map } from 'rxjs/operators';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { ReservarPopupComponent } from '../reservar-popup/reservar-popup.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-perfil-cliente',
@@ -30,12 +31,44 @@ export class PerfilClienteComponent implements OnInit {
   }
 
   openDialog(){
-    const dialogConfig = new MatDialogConfig();
+   // const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
+   // dialogConfig.disableClose = true;
+   // dialogConfig.autoFocus = true;
 
-    this.dialog.open(ReservarPopupComponent, dialogConfig);
+   // this.dialog.open(ReservarPopupComponent, dialogConfig);
+
+    
+  Swal.fire({
+    title: 'Reservar Casa',
+    text: '¿Hacer la reserva?',
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonText: 'Si',
+    cancelButtonText: 'No'
+  }).then((result) => {
+    if (result.value) {
+/*Swal.fire(
+        'Correcto',
+        'Registro correcto',
+        'success'
+      )*/
+      const dialogConfig = new MatDialogConfig();
+
+      dialogConfig.disableClose = true;
+      dialogConfig.autoFocus = true;
+      this.dialog.open(ReservarPopupComponent, dialogConfig);
+
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+      Swal.fire(
+        'Cancelar',
+        'Reservación cancelada',
+        'error'
+      )
+    }
+  })
 
   }
+
+
 }
