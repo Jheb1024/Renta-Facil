@@ -6,6 +6,8 @@ import { ImagenesCasaService } from '../../Cliente/servicios/imagenes-casa.servi
 import firebase from 'firebase';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-catalogo-propietario',
   templateUrl: './catalogo-propietario.component.html',
@@ -38,7 +40,7 @@ export class CatalogoPropietarioComponent implements OnInit {
       console.log(items);
       this.casas1 = items;
       //Procesamos las casas que corresponden al propietario logueado, por el atributo de id_propietario
-      var i;
+      var i: number;
       var j=0;
       for(i=0; i<this.casas1.length; i++){
         if(this.casas1[i].id_propietario == this.idUsuario){
@@ -51,16 +53,43 @@ export class CatalogoPropietarioComponent implements OnInit {
 
 
   darBaja(Valor){
-    this.db.collection('propiedades').doc(Valor).delete()
-      .then(()=>{       
-        this.router.navigate(['/PerfilPropietario']); 
-        //this.cargarGaleria();
-        console.log("Casa Eliminada"); 
-      }).catch(error =>{
-        console.log(error);
-        this.eventAuthError.next(error);
-      });
-      this.cargarGaleria();
+
+      Swal.fire({
+        title: 'Dar de baja la casa',
+        text: '¿Hacer baja?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Si',
+        cancelButtonText: 'No'
+       }).then((result) => {
+        if (result.value) {
+  
+        //Codigo
+        this.db.collection('propiedades').doc(Valor).delete()
+        .then(()=>{       
+          this.router.navigate(['/PerfilPropietario']); 
+          //this.cargarGaleria();
+          console.log("Casa Eliminada"); 
+        }).catch(error =>{
+          console.log(error);
+          this.eventAuthError.next(error);
+        });
+        this.cargarGaleria();
+        Swal.fire(
+            'Correcto',
+            'Casa dada de baja',
+            'success'
+          )
+  
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          Swal.fire(
+            'Cancelar',
+            'Casa sin modificaciones',
+            'error'
+          )
+        }
+      })
+
   }
 
 

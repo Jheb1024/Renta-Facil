@@ -6,6 +6,7 @@ import { reservacion } from '../Interfaces/reservacion_model';
 import { ReservacionesServiceService } from '../servicios/reservaciones-service.service';
 import { MatDialog, MatDialogConfig, } from '@angular/material/dialog';
 import { ReservarPopupComponent } from '../reservar-popup/reservar-popup.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-mis-reservaciones',
@@ -39,10 +40,61 @@ export class MisReservacionesComponent implements OnInit {
       }
     })
   }
-  
+  openCancelar()
+  {
+    Swal.fire({
+      title: 'Cancelar reservación',
+      text: '¿Cancelar reservacion?',
+      icon: 'success',
+      showCancelButton: true,
+      confirmButtonText: 'Si',
+      cancelButtonText: 'No'
+     }).then((result) => {
+      if (result.value) {
 
+      //Codigo en caso de que sí se desee cancelar reservación...
+      Swal.fire(
+          'Correcto',
+          'Reservación cancelada',
+          'success'
+        )
 
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelar',
+          'Reserva sin cambios',
+          'error'
+        )
+      }
+    })
+  }
 
-  
+  openExtender()
+  {
+    Swal.fire({
+      title: 'Extender reservación',
+      text: '¿Extender reservacion?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Si',
+      cancelButtonText: 'No'
+     }).then((result) => {
+      if (result.value) {
 
+      //Codigo en caso de que si se lleve la cancelación de la reserva
+      Swal.fire(
+          'Correcto',
+          'El tiempo de reserva ha aumentado',
+          'success'
+        )
+
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelar',
+          'Reserva sin modificaciones',
+          'error'
+        )
+      }
+    })
+  }
 }

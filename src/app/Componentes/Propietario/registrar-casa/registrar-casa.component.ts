@@ -93,24 +93,25 @@ export class RegistrarCasaComponent implements OnInit {
       
       //Crear objeto a partir del formulario
      var  Usuario= firebase.auth().currentUser;
-      const Propiedad : any = {
+     const Propiedad : any = {
         
-        nombreCasa: this.crearRegistroCasa.value.nombreCasa,
-        direccionCasa: this.crearRegistroCasa.value.direccionCasa,
-        nHabitantes: this.crearRegistroCasa.value.noHabitantes,
-        precio: this.crearRegistroCasa.value.precio,
-        descripcion: this.crearRegistroCasa.value.descripcion,
-        servicios: this.crearRegistroCasa.value.servicios,
-        idCasa: this.randomId,
-        //direccionCasa:;
-        estado:'Inactiva'
+      nombreCasa: this.crearRegistroCasa.value.nombreCasa,
+      direccionCasa: this.crearRegistroCasa.value.direccionCasa,
+      nHabitantes: this.crearRegistroCasa.value.noHabitantes,
+      precio: this.crearRegistroCasa.value.precio,
+      descripcion: this.crearRegistroCasa.value.descripcion,
+      servicios: this.crearRegistroCasa.value.servicios,
+      idCasa: this.randomId,
+      //direccionCasa:;
+      estado:'Inactiva'
 
-      }
-      this._storage.ref(`images/${this.randomId}`).getDownloadURL().subscribe(url=>{
+    }
+
+     /* this._storage.ref(`images/${this.randomId}`).getDownloadURL().subscribe(url=>{
         this.URLIMAGE = url;
         this.registrarCasaServicio.registrarCasaServ(Propiedad,this.randomId,this.URLIMAGE);
         console.log("urlde la imagen" + this.URLIMAGE);
-      })
+      })*/
       
     }
 
@@ -147,12 +148,31 @@ export class RegistrarCasaComponent implements OnInit {
         Swal.fire({
           title: 'Registrar casa nueva',
           text: '¿Hacer el registro?',
-          icon: 'success',
+          icon: 'question',
           showCancelButton: true,
           confirmButtonText: 'Si',
           cancelButtonText: 'No'
         }).then((result) => {
           if (result.value) {
+
+            const Propiedad : any = {
+        
+              nombreCasa: this.crearRegistroCasa.value.nombreCasa,
+              direccionCasa: this.crearRegistroCasa.value.direccionCasa,
+              nHabitantes: this.crearRegistroCasa.value.noHabitantes,
+              precio: this.crearRegistroCasa.value.precio,
+              descripcion: this.crearRegistroCasa.value.descripcion,
+              servicios: this.crearRegistroCasa.value.servicios,
+              idCasa: this.randomId,
+              //direccionCasa:;
+              estado:'Inactiva'
+      
+            }
+            this._storage.ref(`images/${this.randomId}`).getDownloadURL().subscribe(url=>{
+              this.URLIMAGE = url;
+              this.registrarCasaServicio.registrarCasaServ(Propiedad,this.randomId,this.URLIMAGE);
+              console.log("urlde la imagen" + this.URLIMAGE);
+            })
             Swal.fire(
               'Correcto',
               'Registro correcto',
