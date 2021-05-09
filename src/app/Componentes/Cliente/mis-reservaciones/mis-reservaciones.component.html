@@ -1,6 +1,6 @@
 
 <div>
-    <h1>Mis reservaciones</h1>
+    <h1 class="titulo text-center">Mis reservaciones</h1>
 </div>
 <div>
     
@@ -10,17 +10,26 @@
                 <th scope="col">Nombre Casa</th>
                 <th scope="col">Fecha Entrada</th>
                 <th scope="col">Fecha Salida</th>
+                <th scope="col">Costo</th>
                 <th class="d-none d-sm-block" scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>
             <tr class="table-info" *ngFor="let item of listReservaciones">
-                <th scope="row">{{item.idPropiedad}}</th>
+                
+                <td scope="row">{{item.nombreCasa}}</td>
                 <td>{{item.fechaInicio.toDate() | date:"MM/dd/yyyy"}}</td>
                 <td>{{item.fechaFinal.toDate() | date:"MM/dd/yyyy"}}</td>
+                <td>$ {{item.costo| number: '3.1-2'}}</td>
                 <td class="btn-group d-none d-sm-block " role="group">
+<<<<<<< HEAD
+                    <button type="button" class="btn btn-outline-warnings m-1" class ="Extender" (click)="openDialog(item.idReservacion, item.fechaInicio.toDate(), item.precioCasa)">Extender</button>
+                    
+                    <button type="button" class="btn btn-outline-warnings m-1" class ="Cancelar"(click)="cancelarReservacion(item.idReservacion)">Cancelar</button>
+=======
                     <button type="button" class="btn btn-outline-warnings m-1" (click)="openExtender()">Extender</button>
                     <button type="button" class="btn btn-outline-warnings m-1" (click)="openCancelar()">Cancelar</button>
+>>>>>>> origin/master
                 </td>
             </tr>
         </tbody>

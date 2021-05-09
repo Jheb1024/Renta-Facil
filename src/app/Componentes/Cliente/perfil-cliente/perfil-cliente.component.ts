@@ -7,6 +7,10 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { map } from 'rxjs/operators';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { ReservarPopupComponent } from '../reservar-popup/reservar-popup.component';
+<<<<<<< HEAD
+import { ReservacionesServiceService } from '../servicios/reservaciones-service.service';
+=======
+>>>>>>> origin/master
 import Swal from 'sweetalert2';
 
 @Component({
@@ -20,7 +24,7 @@ export class PerfilClienteComponent implements OnInit {
   fileUploads?: any[];
 
   constructor(private imageService: ImagenesCasaService,
-    private dialog:MatDialog,
+    private dialog:MatDialog, private reservacionService:ReservacionesServiceService
     ) { }
 
   ngOnInit(): void {
@@ -30,6 +34,51 @@ export class PerfilClienteComponent implements OnInit {
     });
   }
 
+<<<<<<< HEAD
+  openDialog(idCasa, precio, nombreCasa){
+  /*  this.reservacionService.precio = precio;
+    this.reservacionService.idCasa = idCasa;
+    this.reservacionService.nombreCasa=nombreCasa;
+    console.log("id casaaaa"+idCasa);
+
+    const dialogConfig = new MatDialogConfig();
+    
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(ReservarPopupComponent, dialogConfig);*/
+
+    Swal.fire({
+      title: 'Reservar Casa',
+      text: '¿Hacer la reserva?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Si',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.value) {
+        //Código-------------------------
+        this.reservacionService.precio = precio;
+        this.reservacionService.idCasa = idCasa;
+        this.reservacionService.nombreCasa = nombreCasa;
+        console.log("id casaaaa" + idCasa);
+
+        const dialogConfig = new MatDialogConfig();
+
+        dialogConfig.disableClose = true;
+        dialogConfig.autoFocus = true;
+
+        this.dialog.open(ReservarPopupComponent, dialogConfig);
+
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelar',
+          'Reservación cancelada',
+          'error'
+        )
+      }
+    })
+=======
   openDialog(){
    // const dialogConfig = new MatDialogConfig();
 
@@ -67,6 +116,7 @@ export class PerfilClienteComponent implements OnInit {
       )
     }
   })
+>>>>>>> origin/master
 
   }
 

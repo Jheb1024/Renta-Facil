@@ -2,8 +2,10 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CatalogoAdminComponent } from './Componentes/Administrador/catalogo-admin/catalogo-admin.component';
 import { PerfilAdministradorComponent } from './componentes/Administrador/perfil-administrador/perfil-administrador.component';
+import { ExtenderReservacionComponent } from './componentes/cliente/extender-reservacion/extender-reservacion.component';
 import { MisReservacionesComponent } from './componentes/Cliente/mis-reservaciones/mis-reservaciones.component';
 import { PerfilClienteComponent } from './componentes/Cliente/perfil-cliente/perfil-cliente.component';
+import { PerfilRealComponent } from './componentes/cliente/perfil-real/perfil-real.component';
 import { ReservarPopupComponent } from './componentes/cliente/reservar-popup/reservar-popup.component';
 import { HomeComponent } from './componentes/Home/home/home.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
@@ -42,16 +44,21 @@ const routes: Routes = [
   { path: 'reservar', component:ReservarPopupComponent,
     canActivate:[CaClienteGuard],
   },
+  { path: 'extenderreservacion', component:ExtenderReservacionComponent,
+    canActivate:[CaClienteGuard],
+  },
+  { path: 'perfilreal', component:PerfilRealComponent, 
+    canActivate:[CaClienteGuard],
+  },
+ 
   //Componentes del administrador
   {path: 'PerfilAdministrador',component: PerfilAdministradorComponent,
     canActivate:[CanEditGuard],
   },
-
   {
     path: 'CatalogoAdministrador', component:CatalogoAdminComponent,
     canActivate:[CanEditGuard],
   },
-
   { path: 'nabvar', component:NavbarComponent }
 
 
@@ -62,4 +69,13 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [RegistroComponent, LoginComponent, HomeComponent, RegistrarCasaComponent,CatalogoPropietarioComponent, NavbarComponent, MisReservacionesComponent, ReservarPopupComponent]
+export const routingComponents = [RegistroComponent, 
+  LoginComponent, 
+  HomeComponent, 
+  RegistrarCasaComponent,
+  CatalogoPropietarioComponent, 
+  NavbarComponent, 
+  MisReservacionesComponent,
+  ReservarPopupComponent, 
+  ExtenderReservacionComponent,
+  PerfilRealComponent,]

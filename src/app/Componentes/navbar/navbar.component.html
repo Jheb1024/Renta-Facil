@@ -1,17 +1,19 @@
+
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
-        <img src="https://scontent-qro1-1.xx.fbcdn.net/v/t1.6435-9/173917215_3978199878941157_8090787648315033980_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=730e14&_nc_eui2=AeHTJJ3lps5FBLhCbf5YW7wJNC5IPHHn_9Y0Lkg8cef_1kqaxlCICuawf1JC8k7QPYGBTcIxnXts4_yzzw72lBI9&_nc_ohc=xmFf8vakH-QAX9-qBmd&_nc_ht=scontent-qro1-1.xx&oh=9aa02d2229f685d96b29e8485930c47d&oe=609CD52F" width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="https://scontent-qro1-1.xx.fbcdn.net/v/t1.6435-9/173917215_3978199878941157_8090787648315033980_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=730e14&_nc_eui2=AeHTJJ3lps5FBLhCbf5YW7wJNC5IPHHn_9Y0Lkg8cef_1kqaxlCICuawf1JC8k7QPYGBTcIxnXts4_yzzw72lBI9&_nc_ohc=xmFf8vakH-QAX9-qBmd&_nc_ht=scontent-qro1-1.xx&oh=9aa02d2229f685d96b29e8485930c47d&oe=609CD52F" class="im" alt="">
     Easy Lease
     </a> <!-- aqui puede ir el logo-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-   
+
     <ul *ngIf="user$ | async as user; else login" class="navbar-nav">
         <li class="nav-item"><a routerLink="/" class="nav-link">Inicio</a></li>
-        
+
         <li *ngIf="isAdministrador " class="nav-item"><a routerLink="/PerfilAdministrador" class="nav-link">Perfil</a></li>
         <li *ngIf="isAdministrador " class="nav-item"><a routerLink="/CatalogoAdministrador" class="nav-link">Adminsitrar Catalogo</a></li>
 
@@ -19,15 +21,16 @@
         <li *ngIf="isPropietario  " class="nav-item"><a routerLink="/registrarCasa" class="nav-link">Registrar Casa</a></li>
         <li *ngIf="isPropietario  " class="nav-item"><a routerLink="/catalogoPropietario" class="nav-link">Mis propiedades</a></li>
 
-        <li *ngIf="isCliente" class="nav-item"><a routerLink="/PerfilCliente" class="nav-link">Perfil</a></li>
+       	<li *ngIf="isCliente" class="nav-item"><a routerLink="/PerfilCliente" class="nav-link">Catálogo</a></li>
+        <li *ngIf="isCliente" class="nav-item"><a routerLink="/perfilreal" class="nav-link">Perfil</a></li>
         <li *ngIf="isCliente" class="nav-item"><a routerLink="/misreservaciones" class="nav-link">Mis reservaciones</a></li>
 
         <li *ngIf="user" class="nav-item"><a routerLink="/" (click)="logout()" class="nav-link">Cerrar sesion</a></li>
     </ul>
     <ul class="navbar-nav">
         <ng-template #login>
-            <li class="nav-item"><a routerLink="/login"  class="nav-link">Iniciar sesion</a></li>
-            <li class="nav-item"><a routerLink="/registro"  class="nav-link">Registro</a></li>
+            <li class="nav-item"><a routerLink="/login"  class="navs">Iniciar sesion</a></li>
+            <li class="nav-item"><a routerLink="/registro"  class="navs">Registro</a></li>
         </ng-template>
     </ul>
   </div><br>

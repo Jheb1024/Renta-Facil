@@ -1,21 +1,12 @@
 <head>
-
-    <title>Bootstrap Card</title>
-   
+  <title>Perfil Cliente</title>
   <meta charset="utf-8">
-   
   <meta name="viewport" content="width=device-width, initial-scale=1">
-   
   <link rel="stylesheet" href="perfil-cliente.component.css">
-   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-   
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-   
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </head> 
 
 <body>   
@@ -33,34 +24,27 @@
         </div>
       </div>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
   <div class="galeria ">
     <div class="card-deck " >
-
       <div *ngFor="let item of casas1">
         <div class="card-body text-center">
             <div class="card" style="width: 18rem;">
-              <div *ngFor="casas1?.lenght > 0; else noCasas1" class="card-header">List of Files</div> <!---->
+              <div *ngFor="casas1?.lenght >= 0; else noCasas1" class="card-header">List of Files</div> <!---->
               <h4 class="card-title"><b>{{item.nombreCasa}}</b></h4>
                   <img src={{item.URLcasa}} class="card-img" width="190px" height="150px">
                   <div class="card-body">
-                    <h5 class="card-title"><b>Precio:</b> {{item.precio}}</h5>
+                    <h3 class="card-title"><b>Precio: </b>${{item.precio}}.00</h3>
                     <p class="card-text"><b>No. Habitantes:</b>  {{item.nHabitantes}}</p> <!--Falta la direccion-->
                     <p class="card-text"><b>Servicios:</b>  {{item.servicios}}</p>
                     <p class="card-text"><b>Descripción:</b>  {{item.descripcion}}</p>
                     <!--<p class="card-text">Dirección:  {{item.direccionCasa}}</p>-->
-                  <button class="btn btn-primary" (click)="openDialog()">Reservar</button>
-                </div>
-              </div>
+                    <button class="btn btn-primary" (click)="openDialog(item.idCasa, item.precio, item.nombreCasa)">Reservar</button>
+                  </div>
+                
             </div>
-          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>
-
-<!--
-<div class="card">
-  <div *ngFor="casas1?.lenght > 0; else noCasas1" class="card-header">List of Files</div>
-  <ul *ngFor="let item of casas1">
-    <img src={{item.URLcasa}} width="100" height="100">
-  </ul>
-</div>-->

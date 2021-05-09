@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<form [formGroup]="extensionReservacion" (ngSubmit)="extenderReservacion()">
+    <h2 class="modal-title text-center" >Extender reservación</h2>
+        <div class="modal-dialog">
+        <div class="modal-content" >
+            
+            <div class="modal-body">
+                <p>Seleccione nueva fecha</p>
+                <input type="date" id="start" name="trip-start" style="background-color:#F8D90F;" value="2018-07-22" min="2018-01-01" max="2030-12-31"
+                formControlName="nuevaFecha">
+            </div>
+        </div>
+        </div>
+        <div class="modal-footer" > 
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="cancelar()" style="background-color:#0191B4;" >Cancelar</button>
+        <button type="submit" class="btn btn-danger" style="background-color:#FE7A15;" (click)="extenderReservacion()">Aceptar</button>
+    </div>
+</form>

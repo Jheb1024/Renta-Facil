@@ -40,6 +40,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { ReservarPopupComponent } from './componentes/cliente/reservar-popup/reservar-popup.component';
+import { ExtenderReservacionComponent } from './componentes/cliente/extender-reservacion/extender-reservacion.component';
+import { PerfilRealComponent } from './componentes/cliente/perfil-real/perfil-real.component';
 
  
 
@@ -59,6 +61,8 @@ import { ReservarPopupComponent } from './componentes/cliente/reservar-popup/res
     NavbarComponent,
     MisReservacionesComponent,
     ReservarPopupComponent,
+    ExtenderReservacionComponent,
+    PerfilRealComponent,
    
     
   ],
@@ -80,7 +84,7 @@ import { ReservarPopupComponent } from './componentes/cliente/reservar-popup/res
      MatButtonModule,
      
   ],
-  entryComponents:[ReservarPopupComponent],
+  entryComponents:[ReservarPopupComponent, ExtenderReservacionComponent],
   providers: [RegistroServicioService, LoginService, RegistrarCasaServiceService, ImagenesCasaService, CanEditGuard, CanPropietarioGuard,CaClienteGuard,ReservacionesServiceService],
   bootstrap: [AppComponent]
 })

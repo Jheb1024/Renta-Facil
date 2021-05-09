@@ -1,93 +1,74 @@
 <section id="registrarCasa">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="col-xs-12 col-sm-6 col-md-4 mx-auto"><br><br>
-                    <div class="card_registrarCasa">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <form [formGroup]="crearRegistroCasa" (ngSubmit)="registrarCasaCom()"
-                                    (submit)="guardar(crearRegistroCasa.value)">
+    <div class="imagen">
+        <img src="https://image.freepik.com/free-photo/beautiful-interior-shot-modern-house-with-white-relaxing-walls-furniture-technology_181624-3828.jpg"
+            class="im">
 
-                                    <div class="imagen">
-                                        <img src="https://image.freepik.com/free-photo/beautiful-interior-shot-modern-house-with-white-relaxing-walls-furniture-technology_181624-3828.jpg"
-                                            class="im">
-  
-                                    </div>
-                                    
-                                    <div class="text-center">
-                                        <img [src]="imgEst" width="100px" height="70px" (click)="cargarImg.click()">
-                                    </div>
-                                    <h1 class="h3 mb-3 font-weight-normal">Registrar casa</h1>
-                                    <div class="form-group">
-                                        <input type="text" id="nombreCasa" name="nombreCasa" class="form-control"
-                                            placeholder="Nombre casa" required formControlName="nombreCasa">
-                                        <div class="text-danger"
-                                            *ngIf="isSubmitted && formControls.nombreCasa.errors?.required">Dato
-                                            requerido</div>
-                                    </div>
-                                    <br>
+    </div>
+    <div class="card">
+        <div class="card-body text-center">
+            <form [formGroup]="crearRegistroCasa" (ngSubmit)="registrarCasaCom()"
+                (submit)="guardar(crearRegistroCasa.value)">
 
-                                    <div class="form-group">
-                                        <input type="text" id="direccionCasa" name="direccionCasa" class="form-control"
-                                            placeholder="Dirección" required formControlName="direccionCasa">
-                                        <div class="text-danger"
-                                            *ngIf="isSubmitted && formControls.direccionCasa.errors?.required">Dato
-                                            requerido</div>
-                                    </div>
+                <div class="text-center">
+                    <img [src]="imgEst" width="100px" height="70px" (click)="cargarImg.click()">
+                </div>
+                <h1 class="h3 mb-3 font-weight-normal">Registrar casa</h1>
+                <div class="form-group">
+                    <input type="text" id="nombreCasa" name="nombreCasa" class="form-control" placeholder="Nombre casa"
+                        required formControlName="nombreCasa">
+                    <div class="text-danger" *ngIf="isSubmitted && formControls.nombreCasa.errors?.required">Dato
+                        requerido</div>
+                </div>
+                <br>
 
-                                    <br>
+                <div class="form-group">
+                    <input type="text" id="direccionCasa" name="direccionCasa" class="form-control"
+                        placeholder="Dirección" required formControlName="direccionCasa">
+                    <div class="text-danger" *ngIf="isSubmitted && formControls.direccionCasa.errors?.required">Dato
+                        requerido</div>
+                </div>
 
-                                    <div class="form-group">
-                                        <input type="text" id="noHabitantes" name="noHabitantes" class="form-control"
-                                            placeholder="Número de habitantes" required formControlName="noHabitantes">
-                                        <div class="text-danger"
-                                            *ngIf="isSubmitted && formControls.noHabitantes.errors?.required">Dato
-                                            requerido</div>
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <input type="text" id="precio" name="precio" class="form-control"
-                                            placeholder="Precio" required formControlName="precio">
-                                        <div class="text-danger"
-                                            *ngIf="isSubmitted && formControls.precio.errors?.required">Dato requerido
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <input type="text" id="descripcion" name="descripcion" class="form-control"
-                                            placeholder="Descripción" required formControlName="descripcion">
-                                        <div class="text-danger"
-                                            *ngIf="isSubmitted && formControls.descripcion.errors?.required">Dato
-                                            requerido</div>
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <input type="servicios" id="servicios" name="servicios" class="form-control"
-                                            placeholder="Servicios" required formControlName="servicios">
-                                        <div class="text-danger"
-                                            *ngIf="isSubmitted && formControls.servicios.errors?.required">Dato
-                                            requerido</div>
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <input type="file" accept="imagen/" class="form-control" #cargarImg
-                                            (change)="seleccionarFotos($event)" (change)="vistaprevia($event)"
-                                            formControlName="foto" />
-                                        <div class="text-danger"
-                                            *ngIf="isSubmitted && formControls.foto.errors?.required">Dato requerido
-                                        </div>
-                                    </div>
-                                    <br><br>
-                                    <button type="submit" class="btn btn-lg primary btn-block"
-                                        (click)="abrirAlerta()">Registrar Casa</button>
+                <br>
 
-                                </form>
-                            </div>
-                        </div>
+                <div class="form-group">
+                    <input type="text" id="noHabitantes" name="noHabitantes" class="form-control"
+                        placeholder="Número de habitantes" required formControlName="noHabitantes">
+                    <div class="text-danger" *ngIf="isSubmitted && formControls.noHabitantes.errors?.required">Dato
+                        requerido</div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" id="precio" name="precio" class="form-control" placeholder="Precio" required
+                        formControlName="precio">
+                    <div class="text-danger" *ngIf="isSubmitted && formControls.precio.errors?.required">Dato requerido
                     </div>
                 </div>
-            </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" id="descripcion" name="descripcion" class="form-control"
+                        placeholder="Descripción" required formControlName="descripcion">
+                    <div class="text-danger" *ngIf="isSubmitted && formControls.descripcion.errors?.required">Dato
+                        requerido</div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="servicios" id="servicios" name="servicios" class="form-control" placeholder="Servicios"
+                        required formControlName="servicios">
+                    <div class="text-danger" *ngIf="isSubmitted && formControls.servicios.errors?.required">Dato
+                        requerido</div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="file" accept="imagen/" class="form-control" #cargarImg
+                        (change)="seleccionarFotos($event)" (change)="vistaprevia($event)" formControlName="foto" />
+                    <div class="text-danger" *ngIf="isSubmitted && formControls.foto.errors?.required">Dato requerido
+                    </div>
+                </div>
+                <br><br>
+                <button type="submit" class="btn btn-lg primary btn-block" (click)="abrirAlerta()">Registrar
+                    Casa</button>
+
+            </form>
         </div>
     </div>
 </section>

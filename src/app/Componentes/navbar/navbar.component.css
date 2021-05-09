@@ -1,0 +1,29 @@
+.navbar-brand{
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    color: gray;
+  }
+  
+  .nav-link{
+    margin: auto;
+    text-align: center;
+    color: gray;
+  }
+  
+  .navs{
+    margin: auto;
+    text-align: center;
+    color: gray;
+  }
+  
+  .navbar{
+    font-style: normal;
+  }
+  
+  .im{
+    width: 40px;
+    height: 40px;
+  }
+  

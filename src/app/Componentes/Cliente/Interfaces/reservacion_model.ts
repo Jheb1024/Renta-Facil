@@ -1,4 +1,7 @@
+import { casas } from "./casa_model";
+
 export interface reservacion{
+    nombreCasa?:string;
     fechaFinal?:Date;
     fechaInicio?:Date;
     idPrpiedad?:string;
@@ -6,4 +9,6 @@ export interface reservacion{
     noTarjeta?:number;
     tarjetaExpiracion?:Date;
     cvc?:number;
+    costo?:number;
+    precioCasa?:number;
 }

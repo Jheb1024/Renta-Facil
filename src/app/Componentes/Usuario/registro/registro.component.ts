@@ -51,9 +51,7 @@ registrarUsuario(){
       correo: this.crearRegistro.value.correo,
       password: this.crearRegistro.value.password,
       //URLcasa:"",
-      roles: {
-        Cliente: true
-      }
+      role:"Cliente",  
     }
     //console.log(usuario);
 
